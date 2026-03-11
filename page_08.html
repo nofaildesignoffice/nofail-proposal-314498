@@ -1,0 +1,1095 @@
+<!-- PAGE: 타월 가이드 (Towel Guide) -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>타월 가이드 | 언커먼타올 - 뱀부 100% 프리미엄 페이스타월</title>
+  <meta name="description" content="페이스타월 고르는 법부터 올바른 세탁법, 피부 타입별 적합 이유까지. 언커먼타올의 프리미엄 뱀부 타월 완벽 가이드.">
+  <meta name="keywords" content="프리미엄 수건, 뱀부 타월, 대나무 수건, 페이스타월, 항균 수건, 속건 수건, 언커먼타올, 타월 관리법, GSM, 수건 세탁법">
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --text-black: #1A1A1A;
+      --text-dark: #333333;
+      --text-gray: #666666;
+      --text-light: #999999;
+      --text-muted: #BCBCBC;
+      --bg-white: #FFFFFF;
+      --bg-light: #F5F5F5;
+      --bg-dark: #2D2D2D;
+      --bg-black: #1A1A1A;
+      --border-light: #E0E0E0;
+      --border-default: #D0D0D0;
+      --placeholder-bg: #E0E0E0;
+      --placeholder-icon: #BCBCBC;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Pretendard', sans-serif;
+      color: var(--text-gray);
+      line-height: 1.6;
+      background: var(--bg-white);
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; font-family: inherit; background: none; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 헤더 */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+      transition: all 0.3s;
+    }
+    .nav.scrolled {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-black);
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+    .nav-item {
+      position: relative;
+    }
+    .nav-item > a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-dark);
+      padding: 24px 0;
+      display: block;
+    }
+    .nav-item.active > a {
+      color: var(--text-black);
+      font-weight: 600;
+    }
+    .nav-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 12px 0;
+      min-width: 180px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.2s;
+      box-shadow: var(--shadow-md);
+    }
+    .nav-item:hover .nav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .nav-dropdown a {
+      display: block;
+      padding: 8px 20px;
+      font-size: 14px;
+      color: var(--text-dark);
+    }
+    .nav-dropdown a:hover {
+      background: var(--bg-light);
+      color: var(--text-black);
+    }
+    .nav-utils {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-utils svg {
+      width: 20px;
+      height: 20px;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+    .mobile-menu-btn {
+      display: none;
+    }
+
+    /* 섹션 공통 */
+    .section-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .section-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text-black);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-gray);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+    .text-center { text-align: center; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+
+    /* 이미지 플레이스홀더 */
+    .img-placeholder {
+      background: var(--placeholder-bg);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+    .img-placeholder svg {
+      color: var(--placeholder-icon);
+      width: 48px;
+      height: 48px;
+    }
+
+    /* 아이콘 박스 */
+    .icon-box {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .icon-box svg {
+      width: 28px;
+      height: 28px;
+      color: var(--text-dark);
+    }
+
+    /* 버튼 */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-primary {
+      background: var(--text-black);
+      color: #FFFFFF;
+      border: 1px solid var(--text-black);
+    }
+    .btn-secondary {
+      background: var(--bg-white);
+      color: var(--text-black);
+      border: 1px solid var(--border-default);
+    }
+
+    /* 섹션 1: 페이스타월 고르는 법 */
+    .guide-selection {
+      padding: 120px 0 80px;
+      background: var(--bg-white);
+    }
+    .selection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .selection-card {
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 32px;
+    }
+    .selection-card-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .selection-card-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 16px;
+    }
+    .selection-card-desc {
+      font-size: 15px;
+      color: var(--text-gray);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .selection-features {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .selection-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text-dark);
+    }
+    .selection-feature-item svg {
+      width: 16px;
+      height: 16px;
+      color: var(--text-dark);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* 섹션 2: 올바른 세탁·관리법 */
+    .guide-care {
+      padding: 80px 0;
+      background: var(--bg-light);
+    }
+    .care-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+      margin-top: 48px;
+    }
+    .care-step {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .care-step:last-child {
+      border-bottom: none;
+    }
+    .care-step-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .care-step-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--bg-dark);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .care-step-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-black);
+    }
+    .care-step-desc {
+      font-size: 15px;
+      color: var(--text-gray);
+      line-height: 1.7;
+      padding-left: 48px;
+    }
+    .care-warning {
+      margin-top: 32px;
+      padding: 20px 24px;
+      background: var(--bg-white);
+      border-left: 4px solid var(--bg-dark);
+      border-radius: var(--radius-sm);
+    }
+    .care-warning-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .care-warning-title svg {
+      width: 18px;
+      height: 18px;
+      color: var(--text-dark);
+    }
+    .care-warning-text {
+      font-size: 14px;
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+
+    /* 섹션 3: 피부 타입별 적합 이유 */
+    .guide-skin {
+      padding: 80px 0;
+      background: var(--bg-white);
+    }
+    .skin-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .skin-card {
+      padding: 40px 32px;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      text-align: center;
+    }
+    .skin-card .icon-box {
+      margin: 0 auto 24px;
+    }
+    .skin-card-type {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 12px;
+    }
+    .skin-card-desc {
+      font-size: 15px;
+      color: var(--text-gray);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .skin-benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: left;
+    }
+    .skin-benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text-dark);
+    }
+    .skin-benefit-item svg {
+      width: 16px;
+      height: 16px;
+      color: var(--text-dark);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* 섹션 4: 사이즈 가이드 */
+    .guide-size {
+      padding: 80px 0;
+      background: var(--bg-light);
+    }
+    .size-content {
+      max-width: 960px;
+      margin: 48px auto 0;
+    }
+    .size-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      background: var(--bg-white);
+    }
+    .size-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .size-table th,
+    .size-table td {
+      padding: 20px 24px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .size-table thead th {
+      background: var(--bg-light);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-black);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .size-table tbody td {
+      font-size: 15px;
+      color: var(--text-dark);
+    }
+    .size-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .size-table tbody td:first-child {
+      font-weight: 600;
+      color: var(--text-black);
+    }
+    .size-image {
+      margin-top: 32px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .size-note {
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* 푸터 */
+    .footer {
+      padding: 60px 0 32px;
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .footer-brand-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 12px;
+    }
+    .footer-brand-info {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+    .footer-col-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: var(--text-light);
+      padding: 4px 0;
+    }
+    .footer-col a:hover {
+      color: var(--text-dark);
+    }
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-social svg {
+      width: 18px;
+      height: 18px;
+      color: var(--text-dark);
+    }
+    .footer-certifications {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .cert-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cert-badge svg {
+      width: 24px;
+      height: 24px;
+      color: var(--text-dark);
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer-bottom-links {
+      display: flex;
+      gap: 16px;
+    }
+    .footer-bottom-links a:hover {
+      color: var(--text-dark);
+    }
+
+    /* TOP 버튼 */
+    .btn-top {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--bg-dark);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      z-index: 90;
+      box-shadow: var(--shadow-md);
+    }
+    .btn-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    .btn-top svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* 반응형 */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .mobile-menu-btn svg {
+        width: 24px;
+        height: 24px;
+        color: var(--text-dark);
+      }
+      
+      .section-title {
+        font-size: 28px;
+      }
+
+      .selection-grid,
+      .skin-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .care-split {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .btn-top {
+        bottom: 24px;
+        right: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="page_01.html" class="nav-logo">언커먼타올</a>
+        <nav class="nav-links">
+          <div class="nav-item">
+            <a href="page_02.html">브랜드</a>
+            <div class="nav-dropdown">
+              <a href="page_02.html">브랜드 철학</a>
+              <a href="page_03.html">브랜드 스토리</a>
+              <a href="page_04.html">브랜드 여정</a>
+              <a href="page_05.html">소재 이야기</a>
+              <a href="page_06.html">지속가능성</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="page_07.html">제품</a>
+          </div>
+          <div class="nav-item active">
+            <a href="page_08.html">타월 가이드</a>
+          </div>
+          <div class="nav-item">
+            <a href="page_09.html">B2B문의</a>
+            <div class="nav-dropdown">
+              <a href="page_09.html">대량구매</a>
+              <a href="page_10.html">파트너십</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="page_11.html">고객 후기</a>
+          </div>
+          <div class="nav-item">
+            <a href="page_12.html">고객센터</a>
+            <div class="nav-dropdown">
+              <a href="page_12.html">FAQ</a>
+              <a href="page_13.html">1:1 문의</a>
+              <a href="page_14.html">주문 조회</a>
+              <a href="page_15.html">매장 안내</a>
+            </div>
+          </div>
+        </nav>
+        <div class="nav-utils">
+          <i data-lucide="search"></i>
+          <i data-lucide="shopping-cart"></i>
+          <i data-lucide="user"></i>
+          <button class="mobile-menu-btn">
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 섹션 1: 페이스타월 고르는 법 -->
+    <section class="guide-selection">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">Guide 01</p>
+          <h1 class="section-title">페이스타월 고르는 법</h1>
+          <p class="section-desc mx-auto">GSM, 소재, 직조 방식에 따라 수건의 흡수력과 건조 속도가 달라져요. 내게 맞는 타월을 고르는 기준을 알려드릴게요.</p>
+        </div>
+        <div class="selection-grid">
+          <!-- GSM별 차이 -->
+          <div class="selection-card">
+            <p class="selection-card-label">GSM (그램 퍼 스퀘어 미터)</p>
+            <h2 class="selection-card-title">무게로 보는 흡수력</h2>
+            <p class="selection-card-desc">GSM은 1㎡당 원단 무게를 의미해요. 숫자가 높을수록 두껍고 흡수력이 좋지만, 건조 시간은 길어집니다.</p>
+            <div class="selection-features">
+              <div class="selection-feature-item">
+                <i data-lucide="check"></i>
+                <span>150~200 GSM: 얇고 빠른 건조 (여름용)</span>
+              </div>
+              <div class="selection-feature-item">
+                <i data-lucide="check"></i>
+                <span>200~250 GSM: 균형잡힌 흡수력과 건조 속도 (사계절)</span>
+              </div>
+              <div class="selection-feature-item">
+                <i data-lucide="check"></i>
+                <span>250+ GSM: 높은 흡수력, 느린 건조 (호텔급 두께)</span>
+              </div>
+              <div class="selection-feature-item">
+                <i data-lucide="check"></i>
+                <span>언커먼타올 216 GSM: 최적 균형점</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 소재별 특성 -->
+          <div class="selection-card">
+            <p class="selection-card-label">소재 Material</p>
+            <h2 class="selection-card-title">소재에 따른 특성 비교</h2>
+            <p class="selection-card-desc">면, 대나무, 마이크로화이버 등 소재마다 촉감과 항균력, 건조 속도가 달라요.</p>
+            <div class="selection-features">
+              <div class="selection-feature-item">
+                <i data-lucide="check"></i>
+                <span>면 100%: 부드러움, 느린 건조, 항균력 낮음</span>
+              </div>
+              <div class="selection-feature-item">
+                <i data-lucide="check"></i>
+                <span>면 혼방: 가격 저렴, 내구성 약함</span>
+              </div>
+              <div class="selection-feature-item">
+                <i data-lucide="check"></i>
+                <span>마이크로화이버: 빠른 건조, 딱딱한 촉감</span>
+              </div>
+              <div class="selection-feature-item">
+                <i data-lucide="check"></i>
+                <span>뱀부 100%: 항균 95%, 빠른 건조, 부드러운 촉감</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 직조 방식 -->
+          <div class="selection-card">
+            <p class="selection-card-label">직조 Weaving</p>
+            <h2 class="selection-card-title">습식 vs 건식 직조</h2>
+            <p class="selection-card-desc">직조 방식은 원단의 밀도와 내구성을 결정해요. 습식 직조는 희귀한 고급 공법입니다.</p>
+            <div class="selection-features">
+              <div class="selection-feature-item">
+                <i data-lucide="check"></i>
+                <span>건식 직조: 일반적 방식, 빠른 생산</span>
+              </div>
+              <div class="selection-feature-item">
+                <i data-lucide="check"></i>
+                <span>습식 직조: 70도 습도 유지, 섬유 밀도 2배</span>
+              </div>
+              <div class="selection-feature-item">
+                <i data-lucide="check"></i>
+                <span>습식의 장점: 보푸라기 없음, 세탁 견뢰도 최고 등급</span>
+              </div>
+              <div class="selection-feature-item">
+                <i data-lucide="check"></i>
+                <span>언커먼타올: 뱀부 100% + 습식 직조</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 섹션 2: 올바른 세탁·관리법 -->
+    <section class="guide-care">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">Guide 02</p>
+          <h2 class="section-title">올바른 세탁·관리법</h2>
+          <p class="section-desc mx-auto">프리미엄 타월도 잘못된 세탁으로 수명이 짧아질 수 있어요. 5년 이상 부드럽게 사용하는 관리 팁을 알려드릴게요.</p>
+        </div>
+        <div class="care-split">
+          <!-- 세탁 방법 -->
+          <div>
+            <h3 style="font-size:20px; font-weight:700; color:var(--text-black); margin-bottom:24px;">세탁 수명 연장 팁</h3>
+            <div class="care-step">
+              <div class="care-step-header">
+                <div class="care-step-number">1</div>
+                <h4 class="care-step-title">첫 세탁은 단독으로</h4>
+              </div>
+              <p class="care-step-desc">새 타월은 염색 과정에서 미세한 색소가 남아있을 수 있어요. 첫 세탁은 타월끼리만 세탁해주세요.</p>
+            </div>
+            <div class="care-step">
+              <div class="care-step-header">
+                <div class="care-step-number">2</div>
+                <h4 class="care-step-title">30~40도 미온수 세탁</h4>
+              </div>
+              <p class="care-step-desc">뜨거운 물은 섬유를 상하게 해요. 미온수 세탁으로 섬유 탄성을 유지해주세요.</p>
+            </div>
+            <div class="care-step">
+              <div class="care-step-header">
+                <div class="care-step-number">3</div>
+                <h4 class="care-step-title">중성세제 사용</h4>
+              </div>
+              <p class="care-step-desc">표백제, 형광제가 들어간 세제는 섬유를 약하게 만들어요. 중성 세제를 권장합니다.</p>
+            </div>
+            <div class="care-step">
+              <div class="care-step-header">
+                <div class="care-step-number">4</div>
+                <h4 class="care-step-title">통풍 잘 되는 곳에 건조</h4>
+              </div>
+              <p class="care-step-desc">직사광선보다는 그늘에서 바람이 통하는 곳이 좋아요. 건조기 사용 시 저온 설정을 권장합니다.</p>
+            </div>
+            <div class="care-step">
+              <div class="care-step-header">
+                <div class="care-step-number">5</div>
+                <h4 class="care-step-title">3~4일에 한 번 교체</h4>
+              </div>
+              <p class="care-step-desc">매일 세탁하면 섬유가 빨리 닳아요. 2~3장을 번갈아 사용하며 주 2회 세탁을 추천해요.</p>
+            </div>
+          </div>
+
+          <!-- 유연제 주의 -->
+          <div>
+            <div class="img-placeholder" style="aspect-ratio:4/3;">
+              <i data-lucide="droplet"></i>
+            </div>
+            <div class="care-warning">
+              <p class="care-warning-title">
+                <i data-lucide="alert-circle"></i>
+                유연제 사용 시 주의사항
+              </p>
+              <p class="care-warning-text">유연제는 섬유 표면에 막을 형성해 일시적으로 부드럽게 만들지만, 장기적으로는 흡수력을 낮추고 세균 번식을 유발할 수 있어요. 뱀부 타월은 자체적으로 부드러우므로 유연제 없이 사용하는 것을 권장합니다.</p>
+            </div>
+            <div class="care-warning" style="margin-top:16px; border-left-color:var(--text-black);">
+              <p class="care-warning-title">
+                <i data-lucide="sparkles"></i>
+                세탁 횟수별 품질 변화
+              </p>
+              <p class="care-warning-text">언커먼타올은 50회 세탁 후에도 세탁 견뢰도 최고 등급을 유지해요. 일반 면 타월은 20회 이후부터 뻣뻣해지기 시작하지만, 뱀부 100% 습식 직조는 세탁할수록 더 부드러워지는 특성이 있습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 섹션 3: 피부 타입별 적합 이유 -->
+    <section class="guide-skin">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">Guide 03</p>
+          <h2 class="section-title">피부 타입별 적합 이유</h2>
+          <p class="section-desc mx-auto">뱀부 100% 소재는 민감성, 건성, 지성 피부 모두에게 안전해요. 피부과 전문의가 권장하는 이유를 알려드릴게요.</p>
+        </div>
+        <div class="skin-grid">
+          <!-- 민감성 피부 -->
+          <div class="skin-card">
+            <div class="icon-box">
+              <i data-lucide="shield-check"></i>
+            </div>
+            <h3 class="skin-card-type">민감성 피부</h3>
+            <p class="skin-card-desc">자극에 쉽게 반응하는 민감 피부에는 항균·저자극 소재가 필수예요.</p>
+            <div class="skin-benefits">
+              <div class="skin-benefit-item">
+                <i data-lucide="check"></i>
+                <span>항균 95% — 세균 번식 억제</span>
+              </div>
+              <div class="skin-benefit-item">
+                <i data-lucide="check"></i>
+                <span>화학처리 무첨가 — KC 인증 1등급</span>
+              </div>
+              <div class="skin-benefit-item">
+                <i data-lucide="check"></i>
+                <span>부드러운 촉감 — 마찰 최소화</span>
+              </div>
+              <div class="skin-benefit-item">
+                <i data-lucide="check"></i>
+                <span>보푸라기 없음 — 피부 자극 제로</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 건성 피부 -->
+          <div class="skin-card">
+            <div class="icon-box">
+              <i data-lucide="droplets"></i>
+            </div>
+            <h3 class="skin-card-type">건성 피부</h3>
+            <p class="skin-card-desc">수분 보유력이 낮은 건성 피부는 뻣뻣한 수건에 민감하게 반응해요.</p>
+            <div class="skin-benefits">
+              <div class="skin-benefit-item">
+                <i data-lucide="check"></i>
+                <span>습식 직조 — 극세사 같은 부드러움</span>
+              </div>
+              <div class="skin-benefit-item">
+                <i data-lucide="check"></i>
+                <span>피부 장벽 보호 — 마찰 최소화</span>
+              </div>
+              <div class="skin-benefit-item">
+                <i data-lucide="check"></i>
+                <span>세안 후 촉촉함 유지 — 흡수력 균형</span>
+              </div>
+              <div class="skin-benefit-item">
+                <i data-lucide="check"></i>
+                <span>세탁 후에도 부드러움 — 장기 사용</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 지성 피부 -->
+          <div class="skin-card">
+            <div class="icon-box">
+              <i data-lucide="sun"></i>
+            </div>
+            <h3 class="skin-card-type">지성 피부</h3>
+            <p class="skin-card-desc">피지 분비가 많은 지성 피부는 빠른 건조와 항균력이 중요해요.</p>
+            <div class="skin-benefits">
+              <div class="skin-benefit-item">
+                <i data-lucide="check"></i>
+                <span>빠른 건조 — 세균 번식 방지</span>
+              </div>
+              <div class="skin-benefit-item">
+                <i data-lucide="check"></i>
+                <span>항균 95% — 여드름 예방</span>
+              </div>
+              <div class="skin-benefit-item">
+                <i data-lucide="check"></i>
+                <span>냄새 무발생 — 4년간 무취 테스트</span>
+              </div>
+              <div class="skin-benefit-item">
+                <i data-lucide="check"></i>
+                <span>흡수력 500cc — 과잉 피지 제거</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 섹션 4: 사이즈 가이드 -->
+    <section class="guide-size">
+      <div class="container">
+        <div class="text-center">
+          <p class="section-label">Guide 04</p>
+          <h2 class="section-title">사이즈 가이드</h2>
+          <p class="section-desc mx-auto">언커먼타올 페이스타월의 실측 사이즈와 용도별 권장 사이즈를 안내해드려요.</p>
+        </div>
+        <div class="size-content">
+          <!-- 사이즈 표 -->
+          <div class="size-table-wrap">
+            <table class="size-table">
+              <thead>
+                <tr>
+                  <th>제품명</th>
+                  <th>실측 사이즈 (cm)</th>
+                  <th>무게 (g)</th>
+                  <th>권장 용도</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>페이스타월</td>
+                  <td>33 x 75</td>
+                  <td>216</td>
+                  <td>세안, 운동 후 땀 닦기</td>
+                </tr>
+                <tr>
+                  <td>핸드타월</td>
+                  <td>28 x 42</td>
+                  <td>약 120</td>
+                  <td>손 닦기, 휴대용</td>
+                </tr>
+                <tr>
+                  <td>바스타월</td>
+                  <td>70 x 140</td>
+                  <td>약 650</td>
+                  <td>샤워 후 전신 사용</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 실측 비교 이미지 -->
+          <div class="size-image img-placeholder" style="aspect-ratio:16/9;">
+            <i data-lucide="ruler"></i>
+          </div>
+
+          <!-- 참고 사항 -->
+          <p class="size-note">
+            ※ 실측 사이즈는 세탁 전 기준이며, 세탁 후 약 3~5% 수축이 발생할 수 있습니다.<br>
+            ※ 습식 직조 특성상 세탁 후에도 형태 변형이 거의 없으며, 세탁 견뢰도 최고 등급을 유지합니다.<br>
+            ※ 언커먼타올의 216g은 4년간 280g까지 5g 단위로 테스트한 최적의 균형점입니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- 브랜드 정보 -->
+        <div>
+          <p class="footer-brand-name">언커먼타올</p>
+          <div class="footer-brand-info">
+            대표자명: [정보 필요]<br>
+            사업자등록번호: [정보 필요]<br>
+            주소: [정보 필요]<br>
+            고객센터: [정보 필요]<br>
+            이메일: [정보 필요]
+          </div>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" aria-label="스마트스토어"><i data-lucide="shopping-bag"></i></a>
+          </div>
+          <div class="footer-certifications">
+            <div class="cert-badge" title="KC 인증 1등급">
+              <i data-lucide="shield-check"></i>
+            </div>
+            <div class="cert-badge" title="항균 인증">
+              <i data-lucide="award"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- 브랜드 -->
+        <div class="footer-col">
+          <p class="footer-col-title">브랜드</p>
+          <a href="page_02.html">브랜드 철학</a>
+          <a href="page_03.html">브랜드 스토리</a>
+          <a href="page_04.html">브랜드 여정</a>
+          <a href="page_05.html">소재 이야기</a>
+          <a href="page_06.html">지속가능성</a>
+        </div>
+
+        <!-- 쇼핑 -->
+        <div class="footer-col">
+          <p class="footer-col-title">쇼핑</p>
+          <a href="page_07.html">제품</a>
+          <a href="page_08.html">타월 가이드</a>
+          <a href="page_09.html">대량구매</a>
+          <a href="page_10.html">파트너십</a>
+          <a href="page_11.html">고객 후기</a>
+        </div>
+
+        <!-- 고객센터 -->
+        <div class="footer-col">
+          <p class="footer-col-title">고객센터</p>
+          <a href="page_12.html">FAQ</a>
+          <a href="page_13.html">1:1 문의</a>
+          <a href="page_14.html">주문 조회</a>
+          <a href="page_15.html">매장 안내</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 Uncommon Towel. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">개인정보처리방침</a>
+          <a href="#">이용약관</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOP 버튼 -->
+  <button class="btn-top" id="btnTop">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
+  <script>
+    lucide.createIcons();
+
+    // 스크롤 시 헤더 스타일 변경
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // TOP 버튼
+    const btnTop = document.getElementById('btnTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        btnTop.classList.add('visible');
+      } else {
+        btnTop.classList.remove('visible');
+      }
+    });
+    btnTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
