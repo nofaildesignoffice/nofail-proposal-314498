@@ -1,0 +1,758 @@
+<!-- PAGE: 매장 안내 (오프라인 매장 또는 팝업스토어) -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>매장 안내 | 언커먼타올 - 뱀부 100% 프리미엄 페이스타월</title>
+  <meta name="description" content="언커먼타올 오프라인 매장 및 팝업스토어 안내. 직접 만져보고 경험하는 프리미엄 뱀부 타월.">
+  <meta name="keywords" content="프리미엄 수건, 뱀부 타월, 대나무 수건, 페이스타월, 항균 수건, 속건 수건, 언커먼타올">
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --text-black: #1A1A1A;
+      --text-dark: #333333;
+      --text-gray: #666666;
+      --text-light: #999999;
+      --text-muted: #BCBCBC;
+      --bg-white: #FFFFFF;
+      --bg-light: #F5F5F5;
+      --bg-dark: #2D2D2D;
+      --bg-black: #1A1A1A;
+      --border-light: #E0E0E0;
+      --border-default: #D0D0D0;
+      --placeholder-bg: #E0E0E0;
+      --placeholder-icon: #BCBCBC;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Pretendard', sans-serif;
+      color: var(--text-gray);
+      line-height: 1.6;
+      background: var(--bg-white);
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; font-family: inherit; background: none; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 헤더 */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-black);
+    }
+    .gnb {
+      display: flex;
+      gap: 32px;
+    }
+    .gnb > li {
+      position: relative;
+    }
+    .gnb > li > a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-dark);
+      padding: 8px 0;
+      display: block;
+    }
+    .gnb > li.active > a {
+      color: var(--text-black);
+      font-weight: 700;
+    }
+    .gnb-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 8px 0;
+      min-width: 160px;
+      box-shadow: var(--shadow-md);
+      margin-top: 8px;
+    }
+    .gnb > li:hover .gnb-dropdown {
+      display: block;
+    }
+    .gnb-dropdown a {
+      display: block;
+      padding: 8px 16px;
+      font-size: 14px;
+      color: var(--text-gray);
+    }
+    .gnb-dropdown a:hover {
+      background: var(--bg-light);
+      color: var(--text-black);
+    }
+    .header-utils {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .header-utils svg {
+      width: 20px;
+      height: 20px;
+      color: var(--text-dark);
+    }
+    .mobile-menu-btn {
+      display: none;
+    }
+
+    /* 페이지 타이틀 */
+    .page-hero {
+      padding: 80px 0 60px;
+      background: var(--bg-white);
+      text-align: center;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .page-hero h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 16px;
+    }
+    .page-hero p {
+      font-size: 16px;
+      color: var(--text-gray);
+    }
+
+    /* 매장 안내 섹션 */
+    .store-section {
+      padding: 80px 0;
+      background: var(--bg-light);
+    }
+    .store-intro {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 60px;
+    }
+    .store-intro h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 16px;
+    }
+    .store-intro p {
+      font-size: 16px;
+      color: var(--text-gray);
+      line-height: 1.7;
+    }
+
+    /* 매장 카드 */
+    .store-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .store-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .store-card-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--placeholder-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .store-card-img svg {
+      width: 48px;
+      height: 48px;
+      color: var(--placeholder-icon);
+    }
+    .store-card-body {
+      padding: 32px;
+    }
+    .store-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      background: var(--bg-dark);
+      color: var(--bg-white);
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+    .store-card-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 12px;
+    }
+    .store-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .store-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .store-info-item svg {
+      width: 20px;
+      height: 20px;
+      color: var(--text-light);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .store-info-item div {
+      flex: 1;
+    }
+    .store-info-label {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+    .store-info-value {
+      font-size: 15px;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    .store-map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: var(--bg-white);
+      color: var(--text-black);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .store-map-btn:hover {
+      opacity: 0.8;
+    }
+    .store-map-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* 준비중 섹션 */
+    .coming-soon {
+      padding: 80px 0;
+      background: var(--bg-white);
+      text-align: center;
+    }
+    .coming-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .coming-icon svg {
+      width: 40px;
+      height: 40px;
+      color: var(--text-light);
+    }
+    .coming-soon h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 16px;
+    }
+    .coming-soon p {
+      font-size: 16px;
+      color: var(--text-gray);
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto 32px;
+    }
+    .notify-form {
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      gap: 8px;
+    }
+    .notify-input {
+      flex: 1;
+      padding: 14px 16px;
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-family: 'Pretendard', sans-serif;
+    }
+    .notify-btn {
+      padding: 14px 24px;
+      background: var(--text-black);
+      color: var(--bg-white);
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* 푸터 */
+    .footer {
+      padding: 60px 0 32px;
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .footer-brand {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 12px;
+    }
+    .footer-brand-desc {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .footer-contact {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+    .footer-col-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-black);
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: var(--text-light);
+      padding: 4px 0;
+    }
+    .footer-col a:hover {
+      color: var(--text-dark);
+    }
+    .footer-sns {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .footer-sns a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border-light);
+      border-radius: 50%;
+    }
+    .footer-sns svg {
+      width: 18px;
+      height: 18px;
+      color: var(--text-light);
+    }
+    .footer-certifications {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .cert-badge {
+      width: 60px;
+      height: 60px;
+      background: var(--bg-light);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cert-badge svg {
+      width: 32px;
+      height: 32px;
+      color: var(--text-light);
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer-bottom-links {
+      display: flex;
+      gap: 16px;
+    }
+    .footer-bottom-links a {
+      color: var(--text-muted);
+    }
+
+    /* TOP 버튼 */
+    .top-btn {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 48px;
+      height: 48px;
+      background: var(--text-black);
+      color: var(--bg-white);
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+      z-index: 90;
+    }
+    .top-btn.visible {
+      display: flex;
+    }
+    .top-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* 반응형 */
+    @media (max-width: 768px) {
+      .gnb,
+      .header-utils {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .mobile-menu-btn svg {
+        width: 24px;
+        height: 24px;
+        color: var(--text-dark);
+      }
+      .page-hero {
+        padding: 60px 0 40px;
+      }
+      .page-hero h1 {
+        font-size: 28px;
+      }
+      .store-section {
+        padding: 60px 0;
+      }
+      .store-intro {
+        margin-bottom: 40px;
+      }
+      .store-intro h2 {
+        font-size: 24px;
+      }
+      .store-card-body {
+        padding: 24px;
+      }
+      .coming-soon {
+        padding: 60px 0;
+      }
+      .coming-soon h2 {
+        font-size: 24px;
+      }
+      .notify-form {
+        flex-direction: column;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .footer-bottom-links {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .top-btn {
+        bottom: 24px;
+        right: 24px;
+        width: 44px;
+        height: 44px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="page_01.html" class="logo">언커먼타올</a>
+        <nav>
+          <ul class="gnb">
+            <li>
+              <a href="page_02.html">브랜드</a>
+              <ul class="gnb-dropdown">
+                <li><a href="page_02.html">브랜드 철학</a></li>
+                <li><a href="page_03.html">브랜드 스토리</a></li>
+                <li><a href="page_04.html">브랜드 여정</a></li>
+                <li><a href="page_05.html">소재 이야기</a></li>
+                <li><a href="page_06.html">지속가능성</a></li>
+              </ul>
+            </li>
+            <li><a href="page_07.html">제품</a></li>
+            <li><a href="page_08.html">타월 가이드</a></li>
+            <li>
+              <a href="page_09.html">B2B문의</a>
+              <ul class="gnb-dropdown">
+                <li><a href="page_09.html">대량구매</a></li>
+                <li><a href="page_10.html">파트너십</a></li>
+              </ul>
+            </li>
+            <li><a href="page_11.html">고객 후기</a></li>
+            <li class="active">
+              <a href="page_12.html">고객센터</a>
+              <ul class="gnb-dropdown">
+                <li><a href="page_12.html">FAQ</a></li>
+                <li><a href="page_13.html">1:1 문의</a></li>
+                <li><a href="page_14.html">주문 조회</a></li>
+                <li><a href="page_15.html">매장 안내</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-utils">
+          <button><i data-lucide="search"></i></button>
+          <button><i data-lucide="shopping-cart"></i></button>
+          <button><i data-lucide="user"></i></button>
+        </div>
+        <button class="mobile-menu-btn">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 페이지 타이틀 -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>매장 안내</h1>
+        <p>언커먼타올을 직접 만져보고 경험할 수 있는 오프라인 매장 및 팝업스토어 안내입니다.</p>
+      </div>
+    </section>
+
+    <!-- 매장 안내 섹션 -->
+    <section class="store-section">
+      <div class="container">
+        <div class="store-intro">
+          <h2>직접 경험하는 언커먼타올</h2>
+          <p>온라인에서만 만나던 언커먼타올을 오프라인 매장에서 직접 만져보고 체험할 수 있습니다. 216g의 최적 그램수, 뱀부 100% 습식 직조의 촉감을 직접 확인해보세요.</p>
+        </div>
+
+        <div class="store-list">
+          <!-- 상설 매장 카드 (예시) -->
+          <div class="store-card">
+            <div class="store-card-img">
+              <i data-lucide="store"></i>
+            </div>
+            <div class="store-card-body">
+              <span class="store-badge">상설 매장</span>
+              <h3 class="store-card-title">언커먼타올 플래그십 스토어 (예시)</h3>
+              <div class="store-info-list">
+                <div class="store-info-item">
+                  <i data-lucide="map-pin"></i>
+                  <div>
+                    <p class="store-info-label">주소</p>
+                    <p class="store-info-value">서울시 강남구 (구체적 주소 미확정)</p>
+                  </div>
+                </div>
+                <div class="store-info-item">
+                  <i data-lucide="clock"></i>
+                  <div>
+                    <p class="store-info-label">운영시간</p>
+                    <p class="store-info-value">화-일 11:00-20:00 (월요일 휴무)</p>
+                  </div>
+                </div>
+                <div class="store-info-item">
+                  <i data-lucide="phone"></i>
+                  <div>
+                    <p class="store-info-label">연락처</p>
+                    <p class="store-info-value">매장 전화번호 (미확정)</p>
+                  </div>
+                </div>
+              </div>
+              <a href="#" class="store-map-btn">
+                <i data-lucide="navigation"></i>
+                지도 보기
+              </a>
+            </div>
+          </div>
+
+          <!-- 팝업스토어 카드 (예시) -->
+          <div class="store-card">
+            <div class="store-card-img">
+              <i data-lucide="calendar"></i>
+            </div>
+            <div class="store-card-body">
+              <span class="store-badge">팝업스토어</span>
+              <h3 class="store-card-title">언커먼타올 팝업 (예시)</h3>
+              <div class="store-info-list">
+                <div class="store-info-item">
+                  <i data-lucide="map-pin"></i>
+                  <div>
+                    <p class="store-info-label">장소</p>
+                    <p class="store-info-value">서울시 성수동 (구체적 장소 미확정)</p>
+                  </div>
+                </div>
+                <div class="store-info-item">
+                  <i data-lucide="calendar"></i>
+                  <div>
+                    <p class="store-info-label">운영기간</p>
+                    <p class="store-info-value">2025년 상반기 예정</p>
+                  </div>
+                </div>
+                <div class="store-info-item">
+                  <i data-lucide="clock"></i>
+                  <div>
+                    <p class="store-info-label">운영시간</p>
+                    <p class="store-info-value">매일 12:00-20:00</p>
+                  </div>
+                </div>
+              </div>
+              <a href="#" class="store-map-btn">
+                <i data-lucide="navigation"></i>
+                지도 보기
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 준비중 섹션 -->
+    <section class="coming-soon">
+      <div class="container">
+        <div class="coming-icon">
+          <i data-lucide="bell"></i>
+        </div>
+        <h2>새로운 매장 소식 알림 받기</h2>
+        <p>언커먼타올의 새로운 매장 오픈 소식과 팝업스토어 일정을 가장 먼저 받아보세요.</p>
+        <form class="notify-form">
+          <input type="email" class="notify-input" placeholder="이메일 주소를 입력하세요">
+          <button type="submit" class="notify-btn">알림 신청</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">언커먼타올</p>
+          <p class="footer-brand-desc">매일 아침을 특별하게 만드는<br>프리미엄 뱀부 타월</p>
+          <div class="footer-contact">
+            대표자명: (미확정)<br>
+            사업자등록번호: (미확정)<br>
+            주소: (미확정)<br>
+            고객센터: (미확정)<br>
+            이메일: (미확정)
+          </div>
+          <div class="footer-sns">
+            <a href="#"><i data-lucide="instagram"></i></a>
+            <a href="#"><i data-lucide="shopping-bag"></i></a>
+          </div>
+          <div class="footer-certifications">
+            <div class="cert-badge" title="KC 인증 1등급">
+              <i data-lucide="shield-check"></i>
+            </div>
+            <div class="cert-badge" title="항균 인증">
+              <i data-lucide="award"></i>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="footer-col-title">브랜드</p>
+          <a href="page_02.html">브랜드 철학</a>
+          <a href="page_03.html">브랜드 스토리</a>
+          <a href="page_05.html">소재 이야기</a>
+          <a href="page_06.html">지속가능성</a>
+        </div>
+        <div>
+          <p class="footer-col-title">제품/가이드</p>
+          <a href="page_07.html">제품</a>
+          <a href="page_08.html">타월 가이드</a>
+          <a href="page_09.html">대량구매</a>
+          <a href="page_10.html">파트너십</a>
+        </div>
+        <div>
+          <p class="footer-col-title">고객센터</p>
+          <a href="page_12.html">FAQ</a>
+          <a href="page_13.html">1:1 문의</a>
+          <a href="page_14.html">주문 조회</a>
+          <a href="page_15.html">매장 안내</a>
+          <a href="page_11.html">고객 후기</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Uncommon Towel. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">개인정보처리방침</a>
+          <a href="#">이용약관</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOP 버튼 -->
+  <button class="top-btn" id="topBtn">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
+  <script>
+    lucide.createIcons();
+
+    // TOP 버튼
+    const topBtn = document.getElementById('topBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        topBtn.classList.add('visible');
+      } else {
+        topBtn.classList.remove('visible');
+      }
+    });
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
